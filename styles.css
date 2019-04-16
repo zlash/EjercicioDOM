@@ -1,0 +1,42 @@
+h1,h2,h3,h4,p{
+  text-align: center;
+}
+main{
+  width: 400px;
+  margin: auto;
+}
+form{
+  text-align: center;
+}
+.verde{
+  color: green;
+}
+.rojo{
+  color: red;
+}
+.important{
+  font-weight: bold;
+  color: orange;
+}
+#popup{
+  background-color: red;
+  color: white;
+  position: absolute;
+  top: 10px;
+  height: 100px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10%;
+  text-align: center;
+}
+.blink {
+  animation: blink 1s steps(5, start) infinite;
+}
+@keyframes blink {
+  to { visibility: hidden; }
+}
+#popup a{
+  color: white;
+}

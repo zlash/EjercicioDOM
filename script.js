@@ -12,10 +12,16 @@ function inicializar() {
     //03. Todos los elementos que tienen la clase rojo, sacarles la clase rojo y ponerles la clase verde
     // PROBAR CON for of
     var classColor = document.querySelectorAll('.rojo');
-    
+   /*
     for (let i=0; i < classColor.length; i++){
         classColor[i].classList.replace('rojo', 'verde');
     }
+   */
+    
+    for (let m in classColor){
+        classColor[m].classList.replace('rojo', 'verde');
+    }
+  
     
     //04. Cambiar los puntos suspensivos "..." por el contenido que quieras.
     document.getElementsByTagName("li")[6].innerHTML = "El contenido que quieras";

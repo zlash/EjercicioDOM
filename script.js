@@ -20,6 +20,8 @@ function inicializar() {
     let textArea = document.createElement("textarea");
     text.parentNode.replaceChild(textArea,text);
 
+    /* Agregar Noticia*/
+
     let noticiaArray = ["Hola hoy pase un juego de Final Fantasy", "Me pase en dificultad maxima todo Dark soul 3", "Me Vi got capitulo 3"]
    
     for(i=0; i<noticiaArray.length; i++){

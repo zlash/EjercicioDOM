@@ -1,4 +1,4 @@
-#Ayuda!
+# Ayuda!
 
 Necesito hacer los siguientes cambios a la página web, pero no se puede cambiar el código HTML.
 
@@ -6,10 +6,10 @@ En el archivo script.js hay una función `inicializar()` que está vacia y se ej
 
 Los cambios que necesito son:
 
-##Cambios
+## Cambios
 
 * Hacer que desaparezca el popup molesto.
-* Ponerle fondo blanco al documento.
+* Ponerle fondo "#FAFBFC" al documento.
 * Todos los elementos que tienen la clase `rojo`, sacarles la clase `rojo` y ponerles la clase `verde`
 * Cambiar los puntos suspensivos "..." por el contenido que quieras.
 * Cambiar el input de texto definido como `<input type="text">` por `<textarea>`

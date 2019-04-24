@@ -18,3 +18,20 @@ Los cambios que necesito son:
 Al terminar, commitear todos los cambios a github y hacer un pull request contra este repo.
 
 Gracias!
+
+
+#EXTRA! 
+
+Como ejercicio extra, al terminar lo anterior, se puede convertir el código escrito a jQuery.
+
+Para realizarlo, es recomendable comenzar en un nuevo branch (Que se puede llamar, por ejemplo jQuery). 
+
+Para incluir jQuery, en el archivo index.html, en el bloque `head` hay que agregar:
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+```
+
+Además se agrega el siguiente pedido:
+
+* Agregar un botón después del textarea que al hacer click en el, el contenido del textarea se agregue como un nuevo `<li>` al `<ul>` y luego el textarea vuelva estar vacio. Como validación extra, si el textarea está vacio, que no pase nada.

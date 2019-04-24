@@ -20,7 +20,7 @@ Al terminar, commitear todos los cambios a github y hacer un pull request contra
 Gracias!
 
 
-#EXTRA! 
+# EXTRA! 
 
 Como ejercicio extra, al terminar lo anterior, se puede convertir el código escrito a jQuery.
 

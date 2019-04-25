@@ -1,68 +1,42 @@
 function inicializar() {
-
-
-    //Acá va el código de inicialización
-    //01. Hacer que desaparezca el popup molesto.
-    var sacar = document.querySelector('.blink');
-    sacar.style.display = "none";
-
-    //02. Ponerle fondo "#FAFBFC" al documento.
-    document.body.style.backgroundColor = "#FAFBFC";
-
-    //03. Todos los elementos que tienen la clase rojo, sacarles la clase rojo y ponerles la clase verde
-    // PROBAR CON for of
-    var classColor = document.querySelectorAll('.rojo');
-   /*
-    for (let i=0; i < classColor.length; i++){
-        classColor[i].classList.replace('rojo', 'verde');
-    }
-   */
+    $(document).ready(function(){
     
-    for (let m in classColor){
-        classColor[m].classList.replace('rojo', 'verde');
-    }
-  
+        $("#popup").hide();
+
+        $("body").css("background-color", "#FAFBFC");
     
-    //04. Cambiar los puntos suspensivos "..." por el contenido que quieras.
-    document.getElementsByTagName("li")[6].innerHTML = "El contenido que quieras";
-  
-    //05. Cambiar el input de texto definido como <input type="text"> por <textarea>
-    var inputTag = document.getElementsByTagName("input")[0];
-    var textAreaTag = document.createElement("textarea");
-  
-        // Copy the children
-    while (inputTag.firstChild) {
-        textAreaTag.appendChild(inputTag.firstChild); // *Moves* the child
-    }
+        var $claseRoja = $("body").find(".rojo");
 
-        // Copy the attributes
-    for (let i=0; i < inputTag.attributes.length; i++) {
-        textAreaTag.attributes.setNamedItem(inputTag.attributes[i].cloneNode());
-    }
+        for (let x of $claseRoja) {
+            $claseRoja.removeClass("rojo").addClass("verde");
+        }
 
-        // Replace it
-    inputTag.parentNode.replaceChild(textAreaTag, inputTag);  
+        $($("li")[6]).html("Milanesa con fritas");
 
-    //06. Agregar dos o tres noticias despues del titulo que dice "Nuevas noticias:"
+        var $attributes = $($($("form").find("input"))[0]).attr("placeholder");
+        $($("input")[0]).replaceWith('<textarea>' + '</textarea>');
+        $("textArea").attr({"placeholder": $attributes, "id" : "textarea"});
 
-    var h4 = document.querySelector("h4");
-    h4.id= "nuevasnoticias";
-    var ulNuevasNoticias = document.createElement("ul");
-    h4.appendChild(ulNuevasNoticias);
+        var noticiasNuevas = ["Noticia Positiva 1", "Noticia Positiva 2", "Noticia Positiva 3"]
 
-    var noticia1 = document.createElement("li");
-    var textNoticia1 = document.createTextNode("Gente que busca gente");
-    var noticia2 = document.createElement("li");
-    var textNoticia2 = document.createTextNode("Un bebe donó todo su dinero");
-    var noticia3 = document.createElement("li");
-    var textNoticia3 = document.createTextNode("Nueva píldora le da reset a tu vida");
+        for (cadaNoticia of noticiasNuevas){
+            $("h4").append("<li>"+ cadaNoticia +"</li>");
+        }
 
-    noticia1.appendChild(textNoticia1);
-    noticia2.appendChild(textNoticia2);
-    noticia3.appendChild(textNoticia3);
+        $(".input-form").append("<button>"+ "Agregar a la lista" + "</button>").attr("id", "botonAgregar");
 
-    ulNuevasNoticias.appendChild(noticia1);
-    ulNuevasNoticias.appendChild(noticia2);
-    ulNuevasNoticias.appendChild(noticia3);
+        var agregarLista = function(){
+            var $input = $("#textarea").val();
+            if ($input != ""){
+                $("ul").append("<li>"+ $input +"</li>");
+                $("#textarea").val("");
+            }
+        }
+
+        $("button").click(function(){
+            agregarLista();
+        });
+
+    });
 
 }
